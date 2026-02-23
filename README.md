@@ -1,18 +1,14 @@
-# snDGM: Single-nucleus Deep Generative Models
+# snDGM: Single-neuron Deep Generative Models
 
-[![Python](https://img.shields.io/badge/python-3.7+-blue.svg)](https://www.python.org/downloads/)
-[![PyTorch](https://img.shields.io/badge/PyTorch-1.x-red.svg)](https://pytorch.org/)
-[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-
-This repository contains the code for the ICASSP 2026 paper on single-nucleus deep generative models (snDGM). The project implements and benchmarks various variational autoencoder (VAE) architectures for analyzing calcium imaging and single-nucleus data.
+This repository contains the code for the ICASSP 2026 paper on single-neuron deep generative models (snDGM). The project implements and benchmarks various variational autoencoder (VAE) architectures for analyzing calcium imaging and single-neuron data.
 
 ## Overview
 
 The repository provides implementations for:
 - **Multiple VAE architectures**: Fixed/learned variance, supervised, denoising, and GP-based variants
 - **Benchmark experiments**: Systematic evaluation across different noise levels and latent dimensions
-- **Real data applications**: Training and evaluation on real single-nucleus datasets
-- **Evaluation metrics**: kBET, silhouette score, HDBSCAN ARI, SVM accuracy, local entropy
+- **Real data applications**: Training and evaluation on real single-neuron datasets
+- **Evaluation metrics**: kBET, silhouette score, local entropy
 
 ## Repository Structure
 
@@ -20,7 +16,7 @@ The repository provides implementations for:
 icassp2026_public/
 ├── gen_mod_ca_img/          # Simulated data experiments
 │   ├── train_dgm.py         # Train deep generative models
-│   ├── train_effa.py        # Train expectation-maximization FA
+│   ├── train_effa.py        # Train exponential family FA
 │   ├── benchmark.py         # Benchmark analysis and plotting
 │   ├── plots_paper.py       # Generate paper figures
 │   ├── sim_benchmark_dgm.sh # Run DGM benchmarks
@@ -53,7 +49,7 @@ pip install psutil
 
 ### Installing ca_sn_gen_models
 
-This project depends on the custom `ca_sn_gen_models` package, which should be installed separately. Contact the authors or check the lab repository for access.
+This project depends on the custom `ca_sn_gen_models` package, which should be installed separately. Check the lab repository for access.
 
 ## Usage
 
@@ -139,8 +135,6 @@ The models are evaluated using multiple metrics:
 
 - **kBET**: k-nearest neighbor batch effect test
 - **Silhouette Score**: Clustering quality measure
-- **HDBSCAN ARI**: Adjusted Rand Index for hierarchical clustering
-- **SVM Accuracy**: Linear SVM classification on latent representations
 - **Local Entropy**: Information mixing in latent space
 
 ## Visualization
@@ -157,33 +151,10 @@ The benchmark script creates:
 - Performance metrics vs. latent dimensions
 - Cross-model comparisons
 
-## Hardware Requirements
+## Paper
 
-- **RAM**: 16GB+ recommended
-- **GPU**: CUDA-capable GPU with 8GB+ VRAM recommended for faster training
-- **Storage**: Sufficient space for model checkpoints and results
+- B Ros; M Olives-Verger; C Fuses; JM Canals; J Soriano; J Abante (2026). Integration of Calcium Imaging Traces via Deep Generative Modeling. *2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)*. IEEE (in print).
 
-## Output Format
-
-Training scripts generate the following outputs:
-- Model checkpoints (`.pt` files)
-- Training logs and metrics (`.csv` files)
-- Latent representations
-- Evaluation metrics
-- Visualization plots
-
-## Citation
-
-If you use this code in your research, please cite:
-
-```bibtex
-@inproceedings{snDGM2026,
-  title={Single-nucleus Deep Generative Models for Calcium Imaging Data},
-  author={[Authors]},
-  booktitle={IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
-  year={2026}
-}
-```
 
 ## License
 
@@ -193,10 +164,4 @@ If you use this code in your research, please cite:
 
 For questions or issues, please open an issue on GitHub or contact the Abante Lab.
 
-## Acknowledgments
-
-This work was conducted at the Abante Lab. The research was supported by [funding sources].
-
 ---
-
-**Note**: This is research code. For production use, additional testing and optimization may be required.
