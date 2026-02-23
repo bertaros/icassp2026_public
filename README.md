@@ -158,7 +158,8 @@ The benchmark script creates:
 
 ## License
 
-[Specify your license here]
+This project is licensed under the Apache License. See the LICENSE file for details.
+
 
 ## Contact
 
